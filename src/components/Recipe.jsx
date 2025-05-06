@@ -8,7 +8,7 @@ export default function Recipe(){
   }
 
   return(
-    <main>
+    <main className="p-4">
       {/* input */}
       <form className="flex gap-4 justify-center flex-wrap overflow-hidden" action={formHandler}>
         <input 
