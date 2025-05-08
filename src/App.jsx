@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Navbar from "./components/Navbar"
 import Recipe from "./components/Recipe"
-import Card from "./components/card"
+import Card from "./components/Card"
 import datas from "./data"
 
 function App() {
