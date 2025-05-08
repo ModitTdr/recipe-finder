@@ -1,12 +1,17 @@
 import {useState} from "react"
-import IngredientList from "./IngredientLIst"
+import IngredientList from "./IngredientList"
+import RecipeData from "./RecipeData"
 
 export default function Recipe(){
   const [recipeList, setRecipeList] = useState([])
+  const [showRecipe, setShowRecipe] = useState(false)
 
   function formHandler(formData){
     const ingredients = formData.get("ingredients")
     setRecipeList([...recipeList,ingredients])
+  }
+  function toggleSearch(){
+    setShowRecipe(prevShow => !prevShow)
   }
 
   return(
@@ -22,9 +27,11 @@ export default function Recipe(){
         <button className="bg-neutral-950 text-neutral-300 rounded px-6 text-sm h-[38px]">+ Add Ingredients</button>
       </form>
 
-      {/* ingredient list */}
-      <IngredientList recipeList={recipeList} />
+      {/* Ingredient list */}
+      {recipeList.length > 0 && <IngredientList recipeList={recipeList} toggleSearch={toggleSearch}/>}
       
+      {/* Recipe Data */}
+      {showRecipe && <RecipeData/>}
     </main>
   )
 }
