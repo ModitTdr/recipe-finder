@@ -1,12 +1,20 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a react app to find recipe based on ingredients provided by the user. This project uses Hugging Face's [Mixtral-8x7B-Instruct](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1) model to suggest recipes based on a list of ingredients provided by the user. It makes an API call to Hugging Face's Inference API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- Prompt-based recipe generation using Mixtral LLM
+- Simple frontend with React and Tailwind
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Installation
+
+1. Clone the repository:
+2. npm install 
+3. npm install @huggingface/inference
+4. npm install react-markdown         
+5. Create a .env file and enter your hugging face api key VITE_HF_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

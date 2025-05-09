@@ -18,7 +18,7 @@ export default function IngredientList(props){
                     </div>
                     <button 
                         className="bg-orange-700/60 text-neutral-50 px-7 py-1 rounded h-fit cursor-pointer"
-                        onClick={props.toggleSearch}>
+                        onClick={props.getRecipe}>
                         Search
                     </button>
                 </div>

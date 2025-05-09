@@ -1,19 +1,19 @@
 import {useState} from "react"
 import IngredientList from "./IngredientList"
 import RecipeData from "./RecipeData"
+import getData from "./Ai"
 
 export default function Recipe(){
   const [recipeList, setRecipeList] = useState([])
-  const [showRecipe, setShowRecipe] = useState(false)
+  const [recipeData, setRecipeData] = useState("");
 
   function formHandler(formData){
     const ingredients = formData.get("ingredients")
     setRecipeList([...recipeList,ingredients])
   }
-  function toggleSearch(){
-    setShowRecipe(prevShow => !prevShow)
+  async function getRecipe(){
+      setRecipeData(await getData(recipeList))
   }
-
   return(
     <main className="p-4">
       {/* input */}
@@ -28,10 +28,10 @@ export default function Recipe(){
       </form>
 
       {/* Ingredient list */}
-      {recipeList.length > 0 && <IngredientList recipeList={recipeList} toggleSearch={toggleSearch}/>}
+      {recipeList.length > 0 && <IngredientList recipeList={recipeList} getRecipe={getRecipe}/>}
       
       {/* Recipe Data */}
-      {showRecipe && <RecipeData/>}
+      {showRecipe && <RecipeData recipeData={recipeData}/>}
     </main>
   )
 }

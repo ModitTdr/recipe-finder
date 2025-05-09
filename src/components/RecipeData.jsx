@@ -1,7 +1,7 @@
-export default function RecipeData(){
+export default function RecipeData(props){
     return(
         <section className="my-8 space-y-4">
-            Recipe Data goes here
+            {props.recipeData}
         </section>
     )
 }
