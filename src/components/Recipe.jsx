@@ -31,7 +31,7 @@ export default function Recipe(){
       {recipeList.length > 0 && <IngredientList recipeList={recipeList} getRecipe={getRecipe}/>}
       
       {/* Recipe Data */}
-      {showRecipe && <RecipeData recipeData={recipeData}/>}
+      {<RecipeData recipeData={recipeData}/>}
     </main>
   )
 }
